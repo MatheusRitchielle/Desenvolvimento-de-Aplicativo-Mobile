@@ -1,27 +1,18 @@
-
 import React from "react";
-import { View } from "react-native";
-import { ButtonText, Container, Login, PressableLogin, Title, InnerText } from "./styles";
+import Login from "./src/Screens/Login";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native"
 
-const Test = () => {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <Container>
-      <Login>
-        <Title>
-          Login
-        </Title>
-        <View style={{ marginTop: 20 }}>
-          <InnerText placeholder="username"  />
-          <InnerText placeholder="password"  />
-          <PressableLogin>
-            <ButtonText>
-              Login
-            </ButtonText>
-          </PressableLogin>
-        </View>
-      </Login>
-    </Container>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Tela bonita" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 };
 
-export default Test;
+export default App;
